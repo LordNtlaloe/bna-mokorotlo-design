@@ -4,22 +4,27 @@ import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/re
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import { useCart } from '@/apis/CartContext';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Plus, Minus } from 'lucide-react';
 
 const CartModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   const { cart, removeFromCart, updateCartQuantity } = useCart();
-
-  // Initialize quantities to 1 if the cart item's quantity is not defined
-  const [quantities, setQuantities] = useState(cart.map(item => item.quantity || 1));
   const router = useRouter();
+
+  // Initialize quantities based on the cart's initial state
+  const [quantities, setQuantities] = useState(cart.map(item => item.quantity || 1));
+
+  // Sync quantities with cart whenever cart changes
+  useEffect(() => {
+    setQuantities(cart.map(item => item.quantity || 1));
+  }, [cart]);
 
   if (!isOpen) return null;
 
   // Calculate total price
   const getTotal = () => {
-    return cart.reduce((total, item, index) => total + item.price * quantities[index], 0);
+    return cart.reduce((total, item, index) => total + item.price * (quantities[index] || 1), 0);
   };
 
   // Handle quantity change with validation

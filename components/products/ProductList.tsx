@@ -160,9 +160,9 @@ export default function ProductList({ productList = [], title }: ProductProps) {
                     </p>
                     <button
                       onClick={() => handleAddToCart(product)}
-                      className="group inline-flex rounded-xl bg-blue-100 p-2 hover:bg-blue-200 transition-colors duration-300"
+                      className="group inline-flex rounded-md bg-violet-800 p-2 hover:bg-violet-900 transition-colors duration-300"
                     >
-                      <ShoppingCart className="group-hover:text-violet-700 h-4 w-4 text-violet-800" />
+                      <ShoppingCart className="group-hover:text-gray-100 h-4 w-4 text-white" />
                     </button>
                   </div>
                 </div>

@@ -39,16 +39,13 @@ export default function Home({ userInput }: any) {
     latestProduct();
   }, [])
   return (
-    <main className="bg-violet-50">
+    <main className="bg-white">
       <Hero />
       <div className="my-8">
         <CategoryCarousel />
       </div>
       <div className="px-6 text-violet-700 my-2">
         <ProductList productList={popularProducts} title={title} />
-      </div>
-      <div className="">
-        <CTA />
       </div>
       <div className="px-6 text-violet-700 my-2">
         <LatestProducts latestProductsList={latestProducts} title="Latest Products" />
@@ -58,8 +55,11 @@ export default function Home({ userInput }: any) {
           href="/products"
           className="bg-[#51358C] text-white px-6 py-2 rounded-full hover:bg-[#633faf] transition-all hover:scale-105"
         >
-          More Products...
+          More Products
         </Link>
+      </div>
+      <div className="">
+        <CTA />
       </div>
     </main>
   );

@@ -99,7 +99,7 @@ export default function LatestProducts({ latestProductsList = [], title }: Produ
                             uniqueProducts.map((product: any) => {
                                 const imageURL = product?.image !== "undefined" ? product.image : "./placeholder-image.jpg";
                                 const isWished = wishlistIds.includes(product._id); // Check if product is in wishlist
-                                
+
                                 // Calculate if the product is new (created within the last 30 days)
                                 const isNew = new Date().getTime() - new Date(product.createdAt as string).getTime() < 30 * 24 * 60 * 60 * 1000;
 
@@ -145,9 +145,9 @@ export default function LatestProducts({ latestProductsList = [], title }: Produ
                                                 </p>
                                                 <button
                                                     onClick={() => handleAddToCart(product)}
-                                                    className="group inline-flex rounded-xl bg-blue-100 p-2 hover:bg-blue-200 transition-colors duration-300"
+                                                    className="group inline-flex rounded-md bg-violet-800 p-2 hover:bg-violet-900 transition-colors duration-300"
                                                 >
-                                                    <ShoppingCart className="group-hover:text-violet-700 h-4 w-4 text-violet-800" />
+                                                    <ShoppingCart className="group-hover:text-gray-100 h-4 w-4 text-white" />
                                                 </button>
                                             </div>
                                         </div>

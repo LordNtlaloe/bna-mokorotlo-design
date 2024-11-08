@@ -21,10 +21,12 @@ import CategoriesSidebar from "@/components/category/CategoriesSideBar";
 const CategoriesPage = () => {
   const params = useParams();
   const [productList, setProductList] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchProducts = async () => {
-      let productsByCategory;
+      setLoading(true);
+      let productsByCategory = [];
       const category = Array.isArray(params?.name) ? params?.name[0] : params?.name;
 
       if (category === "all") {
@@ -34,6 +36,7 @@ const CategoriesPage = () => {
       }
 
       setProductList(productsByCategory);
+      setLoading(false);
     };
 
     if (params?.name) {
@@ -43,7 +46,7 @@ const CategoriesPage = () => {
 
   // Decode the category name for better presentation
   const categoryName = params?.name
-    ? decodeURIComponent(Array.isArray(params?.name) ? params?.name[0] : params?.name)
+    ? decodeURIComponent(Array.isArray(params?.name) ? params?.name[0] : params?.name).replace(/%20/g, ' ')
     : "";
 
   return (
@@ -62,7 +65,13 @@ const CategoriesPage = () => {
         </DropdownMenu>
       </div>
       <h1 className="text-2xl font-bold text-gray-800 mb-4">{categoryName}</h1>
-      <ProductList productList={productList} title={`${categoryName} Products`} />
+      {loading ? (
+        <p>Loading products...</p>
+      ) : productList.length > 0 ? (
+        <ProductList productList={productList} title={`${categoryName} Products`} />
+      ) : (
+        <p className="text-gray-500">No products available in the {categoryName} category.</p>
+      )}
     </div>
   );
 };

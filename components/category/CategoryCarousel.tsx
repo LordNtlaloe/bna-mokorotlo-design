@@ -23,7 +23,7 @@ export default function CategoryCarousel() {
 
     return (
         <div className="w-full relative px-4 md:px-6 lg:px-8">
-            <h1 className='my-6 py-8 text-2xl md:text-3xl lg:text-4xl text-center font-semibold'>Shop By Category</h1>
+            <h1 className='my-6 py-8 text-2xl text-violet-900 md:text-3xl lg:text-4xl text-center font-semibold'>Shop By Category</h1>
             <Swiper
                 modules={[Autoplay, Pagination, Navigation]}
                 slidesPerView={3} // Default to 2 items on small screens
@@ -69,7 +69,7 @@ export default function CategoryCarousel() {
                                     className="rounded-xl"
                                 />
                             </div>
-                            <Link href={'/category/' + category.name} className="text-xs md:text-sm lg:text-md text-center font-semibold text-violet-700">
+                            <Link href={'/products/category/' + category.name} className="text-xs md:text-sm lg:text-md text-center font-semibold text-violet-700">
                                 {category.name}
                             </Link>
                         </div>
