@@ -25,7 +25,7 @@ const Hero = () => {
             Rise Above Fear
           </h1>
           <p className="max-w-2xl mb-6 font-light lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400 text-[#737373]">
-            Explore our wide range of premium pet products, from food and toys to grooming essentials. Your pet deserves the best!
+            Explore our wide range of premium products, from kids and women's to men's essentials. Your feet deserves the best!
           </p>
           <a 
             href="#" 
