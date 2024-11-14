@@ -9,9 +9,9 @@ const SecondaryNav = () => {
   }
   
   return (
-    <main className="h-12 bg-[#51358C] flex items-center justify-between py-2 px-4">
+    <main className="h-12 bg-[#0D0D0D] flex items-center justify-between py-2 px-4">
       <div className="flex items-center gap-4">
-      <ul className="flex md:flex-row flex-col gap-1 md:gap-6 items-center text-white" >
+      <ul className="flex flex-col gap-1 md:gap-6 items-center text-white" >
           <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
                 {menuItems.map((item) => (
@@ -20,7 +20,7 @@ const SecondaryNav = () => {
                     href={item.href}
                     aria-current={item.current ? 'page' : undefined}
                     className={classNames(
-                      item.current ? 'bg-[#F2DF7E] text-[#51358C]' : 'hover:bg-[#F2D888] hover:text-[#6C548C]',
+                      item.current ? 'bg-[#F20707] text-[#F2F2F2]' : 'hover:bg-[#F20707] hover:text-[#F2F2F2]',
                       'rounded-md px-3 py-2 text-sm font-medium',
                     )}
                   >

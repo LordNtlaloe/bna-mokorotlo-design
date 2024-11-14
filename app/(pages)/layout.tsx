@@ -7,8 +7,8 @@ import "../globals.css"
 
 
 export const metadata: Metadata = {
-    title: "Pawreedy - Online Store",
-    description: "Your One Stop Online Petshop",
+    title: "BNA Mokorotlo Design",
+    description: "Be Nice Authentically",
 };
 
 export default function PagesLayout({

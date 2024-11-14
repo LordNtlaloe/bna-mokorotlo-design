@@ -24,7 +24,7 @@ const DashboardSidebarMenu = () => {
           className='p-2 max-w-fit'
         >
           <div className="flex items-center justify-between">
-            <Menu size={24} className="rounded-full hover:bg-gray-700 transition-colors"/>
+            <Menu size={24} className="rounded-full hover:bg-violet-700 hover:text-white transition-colors"/>
             {isSidebarOpen && (
               <motion.div
                 initial={{ opacity: 0 }}
@@ -41,7 +41,7 @@ const DashboardSidebarMenu = () => {
           {dashboardMenu.map((item) => (
             <Link key={item.href} href={item.href}>
               <motion.div
-                className='flex items-center p-4 text-sm font-medium rounded-lg hover:bg-gray-700 transition-colors mb-2'
+                className='flex items-center p-4 text-sm font-medium rounded-lg hover:bg-violet-700 hover:text-white transition-colors mb-2'
               >
                 <item.icon size={20} style={{ color: item.color, minWidth: "20px" }} />
                 <AnimatePresence>

@@ -90,7 +90,7 @@ export default function LatestProducts({ latestProductsList = [], title }: Produ
     return (
         <main className="py-8 bg-white rounded-lg">
             <div className="mx-auto max-w-full px-4 sm:px-6 lg:px-8">
-                <h2 className="font-manrope font-bold text-2xl sm:text-4xl text-violet-900 mb-8 text-center">
+                <h2 className="font-manrope font-bold text-2xl sm:text-4xl text-[#F20707] mb-8 text-center">
                     {title}
                 </h2>
                 <div className="flex flex-col gap-4">
@@ -139,13 +139,13 @@ export default function LatestProducts({ latestProductsList = [], title }: Produ
                                             <p className="text-slate-400 mt-1 text-sm">{product.category}</p>
                                             <div className="mt-3 flex items-end justify-between">
                                                 <p>
-                                                    <span className="text-lg font-bold text-violet-500">
+                                                    <span className="text-lg font-bold text-[#F20707]">
                                                         M{product.price}
                                                     </span>
                                                 </p>
                                                 <button
                                                     onClick={() => handleAddToCart(product)}
-                                                    className="group inline-flex rounded-md bg-violet-800 p-2 hover:bg-violet-900 transition-colors duration-300"
+                                                    className="group inline-flex rounded-md bg-[#F20707] p-2 hover:bg-[#F2071B] transition-colors duration-300"
                                                 >
                                                     <ShoppingCart className="group-hover:text-gray-100 h-4 w-4 text-white" />
                                                 </button>

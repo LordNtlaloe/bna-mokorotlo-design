@@ -72,7 +72,7 @@ const ProductInfo = ({ id }: { id: string }) => {
               alt={product?.name || "Product Image"}
               layout="fill"
               objectFit="cover"
-              className="rounded-md shadow-sm shadow-violet-700"
+              className="rounded-md shadow-sm shadow-red-700"
             />
           </div>
         </div>
@@ -83,21 +83,21 @@ const ProductInfo = ({ id }: { id: string }) => {
             alt={product?.name || "Product Image"}
             width={64}
             height={64}
-            className="w-16 h-16 cursor-pointer rounded-md shadow-sm shadow-violet-700"
+            className="w-16 h-16 cursor-pointer rounded-md shadow-sm shadow-red-700"
           />
           <Image
             src={imageURL}
             alt={product?.name || "Product Image"}
             width={64}
             height={64}
-            className="w-16 h-16 cursor-pointer rounded-md shadow-sm shadow-violet-700"
+            className="w-16 h-16 cursor-pointer rounded-md shadow-sm shadow-red-700"
           />
         </div>
 
         <div>
           <h2 className="text-2xl font-bold text-gray-800">{product.name}</h2>
           <p className="text-sm text-gray-500 mt-2 font-bold">
-            Category: <span className="text-violet-700 font-normal">{product.category}</span>
+            Category: <span className="text-[#8C142A] font-normal">{product.category}</span>
           </p>
           <p className="text-sm text-gray-500 mt-2 font-bold">
             Availability: <span className="text-green-600 font-normal">{product.status}</span>
@@ -116,7 +116,7 @@ const ProductInfo = ({ id }: { id: string }) => {
                 className="px-2.5 py-1.5 bg-pink-100 text-xs text-pink-600 rounded-md flex items-center"
               >
                 <Heart className="w-4 h-4 mr-1" />
-                {product?.wishlistCount || 100}
+                {product?.wishlistCount || 0}
               </button>
               <button
                 type="button"
@@ -137,25 +137,25 @@ const ProductInfo = ({ id }: { id: string }) => {
                 type="button"
                 className="w-10 h-10 border hover:border-gray-800 font-semibold text-sm rounded-md flex items-center justify-center"
               >
-                SM
+                6
               </button>
               <button
                 type="button"
                 className="w-10 h-10 border border-gray-800 font-semibold text-sm rounded-md flex items-center justify-center"
               >
-                MD
+                7
               </button>
               <button
                 type="button"
                 className="w-10 h-10 border hover:border-gray-800 font-semibold text-sm rounded-md flex items-center justify-center"
               >
-                LG
+                8
               </button>
               <button
                 type="button"
                 className="w-10 h-10 border hover:border-gray-800 font-semibold text-sm rounded-md flex items-center justify-center"
               >
-                XL
+                9
               </button>
             </div>
           </div>
@@ -171,15 +171,15 @@ const ProductInfo = ({ id }: { id: string }) => {
               ></button>
               <button
                 type="button"
-                className="w-10 h-10 bg-gray-400 border border-white hover:border-gray-800 rounded-md"
+                className="w-10 h-10 bg-sky-400 border border-white hover:border-gray-800 rounded-md"
               ></button>
               <button
                 type="button"
-                className="w-10 h-10 bg-orange-400 border border-white hover:border-gray-800 rounded-md"
+                className="w-10 h-10 bg-[#F20707] border border-white hover:border-gray-800 rounded-md"
               ></button>
               <button
                 type="button"
-                className="w-10 h-10 bg-red-400 border border-white hover:border-gray-800 rounded-md"
+                className="w-10 h-10 bg-amber-900 border border-white hover:border-gray-800 rounded-md"
               ></button>
             </div>
           </div>
@@ -196,14 +196,14 @@ const ProductInfo = ({ id }: { id: string }) => {
           <div className="flex flex-col lg:flex-row gap-4">
             <button
               onClick={handleAddToCart}
-              className="bg-[#51358C] hover:bg-[#6845b4] text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg flex items-center justify-center w-full lg:w-auto"
+              className="bg-[#F20707] hover:bg-[#F2071B] text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg flex items-center justify-center w-full lg:w-auto"
             >
               <ShoppingCart className="w-5 h-5 mr-2" />
               Add to Cart
             </button>
             <button
               onClick={handleAddToCart}
-              className="bg-[#51358C] hover:bg-[#6845b4] text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg flex items-center justify-center w-full lg:w-auto"
+              className="bg-[#F20707] hover:bg-[#F2071B] text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg flex items-center justify-center w-full lg:w-auto"
             >
               <Heart className="w-5 h-5 mr-2" />
               Add to Wishlist
@@ -212,9 +212,9 @@ const ProductInfo = ({ id }: { id: string }) => {
         </div>
       </div>
 
-      <Tabs defaultValue="similar-products" className="text-[#51358C] mt-8">
-        <TabsList className="w-full border border-1 border-[#51358C]">
-          <TabsTrigger value="similar-products" className="text-[#51358C]">Similar Products</TabsTrigger>
+      <Tabs defaultValue="similar-products" className="text-[#0D0D0D] mt-8">
+        <TabsList className="w-full border border-1 border-[#F20707]">
+          <TabsTrigger value="similar-products" className="text-[#F20707]">Similar Products</TabsTrigger>
           <TabsTrigger value="ratings">Ratings</TabsTrigger>
         </TabsList>
         <TabsContent value="similar-products" className="w-full mt-4">

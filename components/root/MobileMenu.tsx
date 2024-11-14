@@ -40,13 +40,13 @@ const MobileMenu = ({ userInput = () => { } }: any) => {
                         <MenuIcon />
                     </SheetTrigger>
                     <SheetContent
-                        className="bg-white h-full text-[#51358C] w-72"
+                        className="bg-[#0D0D0D] h-full text-[#F20707] w-72"
                         side="left"
                     >
                         <SheetHeader>
-                            <SheetTitle className="font-bold border-b border-white mt-3 flex justify-start relative -top-10 -left-15">
+                            <SheetTitle className="font-bold mt-3 flex justify-start relative -top-8 -left-15">
                                 <Link href='/'>
-                                    <Image src="/logo01.png" width={100} height={80} alt="Pawreedy Logo" className="rounded-[5px]" />
+                                    <Image src="/logo.png" width={100} height={80} alt="BNA Logo" className="rounded-[5px]" />
                                 </Link>
                             </SheetTitle>
                         </SheetHeader>
@@ -57,7 +57,7 @@ const MobileMenu = ({ userInput = () => { } }: any) => {
                                         href={item.href}
                                         aria-current={item.current ? 'page' : undefined}
                                         className={classNames(
-                                          item.current ? 'text-[#51358C]' : 'text-[#543791]  hover:text-[#51358C]',
+                                          item.current ? 'text-[#F20707]' : 'text-white  hover:text-[#F2071B]',
                                           'rounded-md px-3 py-2 text-sm font-medium',
                                         )}>
                                         {/* <item.icon className="md:hidden flex justify-start" /> */}
@@ -83,7 +83,7 @@ const MobileMenu = ({ userInput = () => { } }: any) => {
                             <div className="mt-6 flex items-start gap-6 absolute top-[300px]">
                                 {/* Cart Icon with Badge */}
                                 <button onClick={openCart} className="transition-transform">
-                                    <ShoppingCart size={24} />
+                                    <ShoppingCart size={24} className="text-white"/>
                                     {cart.length > 0 && (
                                         <span className="relative -top-[30px] -right-4 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                                             {cart.length}
@@ -92,12 +92,12 @@ const MobileMenu = ({ userInput = () => { } }: any) => {
                                 </button>
                                 {/* Wishlist Icon */}
                                 <Link href="/wishlist" className="hover:scale-105 transition-transform">
-                                    <Heart size={24} />
+                                    <Heart size={24} className="text-white"/>
                                 </Link>
                                 {/* User Dropdown */}
                                 <DropdownMenu>
                                     <DropdownMenuTrigger className="flex items-center gap-2">
-                                        <User size={24} className="cursor-pointer" />
+                                        <User size={24} className="cursor-pointer text-white" />
                                     </DropdownMenuTrigger>
                                     <DropdownMenuContent className="bg-white shadow-md rounded p-2">
                                         <SignedIn>

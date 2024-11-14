@@ -115,13 +115,12 @@ const ProductRatings = ({ isReadOnly, isEnabled, product }: { isReadOnly: boolea
       {isEnabled && (
         <div className="flex justify-end pr-2 mt-2">
           <button
-            className={`transition-all flex gap-1 items-center px-2 py-1 rounded border border-violet-800 ${
-              userCanRate ? 'bg-white hover:bg-violet-100' : 'bg-violet-800 cursor-not-allowed'
+            className={`transition-all flex gap-1 items-center px-2 py-1 rounded ${
+              userCanRate ? 'bg-[#F20707] text-white' : 'bg-[#A62D2D] text-white cursor-not-allowed'
             }`}
             onClick={() => userCanRate && setShowRatingComment(!showRatingComment)}
             disabled={!userCanRate}
           >
-            <StarsIcon className='w-5 h-5' />
             Rate Product
           </button>
         </div>

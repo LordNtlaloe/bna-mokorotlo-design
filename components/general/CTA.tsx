@@ -3,11 +3,11 @@ import React from 'react';
 
 const CTA = () => {
   return (
-    <section className="py-10 bg-violet-400 mx-16 rounded-lg" aria-label="service">
+    <section className="py-10 sm:py-5 bg-slate-50  mx-16 rounded-lg" aria-label="service">
       <div className="container mx-auto px-4">
 
         <Image
-          src="/404-1.png"
+          src="/logo.png"
           width={180}
           height={180}
           loading="lazy"
@@ -15,8 +15,8 @@ const CTA = () => {
           className="mx-auto my-auto"
         />
 
-        <h2 className="text-center text-4xl mb-14 text-violet-950 font-bold">
-          <span className="text-white">What your pet needs,</span> when they need it.
+        <h2 className="text-center text-4xl mb-14 text-[#0D0D0D] font-bold">
+          <span className="text-[#F20707]">Rise Above,</span> Fear.
         </h2>
 
         <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -43,7 +43,7 @@ const CTA = () => {
             }
           ].map((service, index) => (
             <li key={index}>
-              <div className="text-center p-4 shadow-lg rounded-lg bg-white flex flex-col items-center justify-between h-64 w-full">
+              <div className="text-center p-4 shadow-sm shadow-[#F20707] rounded-lg bg-white flex flex-col items-center justify-between h-64 w-full">
                 <figure className="mx-auto mb-4">
                   <Image
                     src={service.icon}
@@ -53,7 +53,7 @@ const CTA = () => {
                     alt="service icon"
                   />
                 </figure>
-                <h3 className="text-xl font-bold text-violet-800 mb-2">{service.title}</h3>
+                <h3 className="text-xl font-bold text-[#F20707] mb-2">{service.title}</h3>
                 <p className="text-slate-700">{service.text}</p>
               </div>
             </li>

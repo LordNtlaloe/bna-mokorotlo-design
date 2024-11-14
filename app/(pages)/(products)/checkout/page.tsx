@@ -190,15 +190,15 @@ const CheckoutPage = () => {
       <div className="max-lg:max-w-xl mx-auto w-full">
         <div className="grid lg:grid-cols-3 gap-6">
           {/* Main Checkout Section */}
-          <div className="bg-violet-50 rounded-lg lg:col-span-2 max-lg:order-1 p-6 max-w-4xl mx-auto w-full">
+          <div className="bg-zinc-50 rounded-lg lg:col-span-2 max-lg:order-1 p-6 max-w-4xl mx-auto w-full">
             <div className="text-center max-lg:hidden">
-              <h2 className="text-3xl font-extrabold text-violet-800 inline-block border-gray-800 pb-1">Checkout</h2>
+              <h2 className="text-3xl font-extrabold text-[#F20707] inline-block border-gray-800 pb-1">Checkout</h2>
             </div>
 
             <form className="lg:mt-16">
               {/* Shipping Information */}
               <div>
-                <h2 className="text-xl font-bold text-violet-800">Shipping Info</h2>
+                <h2 className="text-xl font-bold text-[#F20707]">Shipping Info</h2>
 
                 <div className="grid sm:grid-cols-2 gap-8 mt-8">
                   <div>
@@ -266,7 +266,7 @@ const CheckoutPage = () => {
 
               {/* Payment Method */}
               <div className="mt-16">
-                <h2 className="text-xl font-bold text-violet-800">Payment method</h2>
+                <h2 className="text-xl font-bold text-[#F20707]">Payment method</h2>
                 <div className="grid gap-4 sm:grid-cols-2 mt-4">
                   <div className="flex items-center">
                     <input type="radio" className="w-5 h-5 cursor-pointer" id="card" defaultChecked />
@@ -334,8 +334,8 @@ const CheckoutPage = () => {
 
           {/* Order Summary */}
           <div className="lg:col-span-1 max-lg:order-2">
-            <div className="bg-violet-50 p-8 rounded-lg">
-              <h2 className="text-2xl font-bold mb-4 text-violet-800">Order Summary</h2>
+            <div className="bg-zinc-50 p-8 rounded-lg">
+              <h2 className="text-2xl font-bold mb-4 text-[#F20707]">Order Summary</h2>
               <ul>
                 {cart.map((item, index) => (
                   <li key={index} className="flex justify-between items-center mb-4">
@@ -348,12 +348,12 @@ const CheckoutPage = () => {
               <div className="border-t pt-4">
                 <div className="flex justify-between font-bold text-lg">
                   <span>Total</span>
-                  <span>M{cart.reduce((total, item) => total + item.price * item.quantity, 0)}</span>
+                  <span>M{cart.reduce((total, item) => total +   item.price * item.quantity, 0)}</span>
                 </div>
               </div>
               <button
                 onClick={handleCheckout}
-                className="mt-6 w-full py-3 bg-violet-800 text-white font-bold rounded-lg hover:bg-violet-600 transition-colors"
+                className="mt-6 w-full py-3 bg-[#F20707] text-white font-bold rounded-lg hover:bg-[#F2071B] transition-colors"
               >
                 Complete Checkout
               </button>

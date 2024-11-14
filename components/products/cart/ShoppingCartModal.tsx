@@ -113,7 +113,7 @@ const CartModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
                                 <button
                                   type="button"
                                   onClick={() => removeFromCart(item.id)}
-                                  className="font-medium text-[#51358C] hover:text-[#6845b4]"
+                                  className="font-medium text-[#F20707] hover:text-[#F2071B]"
                                 >
                                   Remove
                                 </button>
@@ -135,7 +135,7 @@ const CartModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
                   <div className="mt-6">
                     <button
                       onClick={handleCheckout}
-                      className="flex items-center justify-center rounded-md border border-transparent bg-[#51358C] hover:bg-[#6845b4] px-6 py-3 text-base font-medium shadow-sm text-white"
+                      className="flex items-center justify-center rounded-md border border-transparent bg-[#F20707] hover:bg-[#F2071B] px-6 py-3 text-base font-medium shadow-sm text-white"
                     >
                       Checkout
                     </button>
@@ -144,7 +144,7 @@ const CartModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
                     <button
                       type="button"
                       onClick={onClose}
-                      className="font-medium text-[#51358C] hover:text-[#6845b4]"
+                      className="font-medium text-[#F20707] hover:text-[#F2071B]"
                     >
                       Continue Shopping
                       <span aria-hidden="true"> &rarr;</span>

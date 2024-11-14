@@ -12,8 +12,8 @@ import "slick-carousel/slick/slick-theme.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Pawreedy",
-  description: "Your One Stop Online Petshop",
+  title: "BNA Mokorotlo Design",
+  description: "Be Nice Authentically",
 };
 
 export default function RootLayout({

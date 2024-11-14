@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import logo from '/public/logo01.png' // Ensure the path is correct
+import logo from '/public/logo.png' // Ensure the path is correct
 
 const Loading = () => {
     return (
