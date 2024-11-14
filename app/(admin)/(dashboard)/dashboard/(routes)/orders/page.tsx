@@ -1,58 +1,85 @@
-"use client"
+"use client";
+
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { getAllOrders } from "@/app/_actions/_orderActions";
 import { OrdersTable } from "@/components/orders/OrdersTable/OrderTable";
-import { columns } from "@/components/orders/OrdersTable/columns";
+import { columns, Order } from "@/components/orders/OrdersTable/columns";
 import { useEffect, useState } from "react";
-import { Order } from "@/components/orders/OrdersTable/columns";
+import ChangeStatusPopup from "@/components/orders/ChangeStatus/ChangeOrderStatus";
+import OrderDetailsPopup from "@/components/orders/OrderDetailsPopup";
 
 const OrdersPage = () => {
   const [orders, setOrders] = useState<Order[]>([]);
-  const [error, setError] = useState<string | null>(null);
+  const [popupOrder, setPopupOrder] = useState<Order | null>(null);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-  // In OrdersPage component
-useEffect(() => {
-  const fetchOrders = async () => {
-    try {
+  useEffect(() => {
+    const fetchOrders = async () => {
       const response = await getAllOrders();
-      
       if (response.success) {
-        const mappedOrders = response.orders.map((order: { _id: any; shippingDetails: { name: any; email: any; }; orderStatus: any; cartSummary: { totalAmount: any; }; }) => ({
-          _id: order._id,
-          name: order.shippingDetails.name,       // Ensure 'name' is defined here
-          email: order.shippingDetails.email,     // Ensure 'email' is defined here
-          orderStatus: order.orderStatus,
-          totalAmount: order.cartSummary?.totalAmount || 0, // Adjust based on actual structure
+        const mappedOrders = response.orders.map((order: Order) => ({
+          ...order,
         }));
-        
         setOrders(mappedOrders);
       } else {
-        setError("Failed to fetch orders");
+        // handle error
       }
-    } catch (err) {
-      setError("Failed to fetch orders");
+    };
+
+    fetchOrders();
+  }, []);
+
+  const handleClose = () => {
+    setIsPopupOpen(false);
+    setPopupOrder(null);
+  };
+
+  const handleSave = (newStatus: string) => {
+    if (popupOrder) {
+      popupOrder.orderStatus = newStatus;
+      setIsPopupOpen(false);
+      setPopupOrder(null);
     }
   };
 
-  fetchOrders();
-}, []);
+  const handleChangeStatus = (order: Order) => {
+    setPopupOrder(order);
+    setIsPopupOpen(true);
+  };
 
-  if (error) {
-    return <p className="text-red-500">{error}</p>;
-  }
+  const handleViewDetails = (order: Order) => {
+    setPopupOrder(order);
+    setIsPopupOpen(true);
+  };
 
   return (
     <section className="mx-1">
-      <div>
-        <h1 className="mb-3 md:text-3xl font-bold">Orders</h1>
-        {orders.length === 0 ? (
-          <p>No orders available. Please check the data source.</p>
-        ) : (
-          <OrdersTable columns={columns} data={orders} />
-        )}
-      </div>
+      <h1 className="mb-3 md:text-3xl font-bold">Orders</h1>
+      <OrdersTable
+        columns={columns}
+        data={orders}
+      />
+      {popupOrder && (
+        <Dialog open={isPopupOpen} onOpenChange={setIsPopupOpen}>
+          <DialogContent>
+            {popupOrder ? (
+              <ChangeStatusPopup
+                orderId={popupOrder._id}
+                currentStatus={popupOrder.orderStatus}
+                onClose={handleClose}
+                onSave={handleSave}
+              />
+            ) : (
+              <OrderDetailsPopup
+                orderDetails={popupOrder}
+                onClose={handleClose}
+              />
+            )}
+          </DialogContent>
+        </Dialog>
+      )}
     </section>
   );
-  
 };
 
 export default OrdersPage;
