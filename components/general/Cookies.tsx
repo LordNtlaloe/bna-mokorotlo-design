@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Button, buttonVariants } from "../ui/button";
+import { Button } from "../ui/button";
 import { CookieIcon } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -41,9 +41,7 @@ export default function CookieConsent({
                     }, 700);
                 }
             }
-        } catch (e) {
-            // console.log("Error: ", e);
-        }
+        } catch (e) {}
     }, []);
 
     return variant != "small" ? (
@@ -56,7 +54,7 @@ export default function CookieConsent({
                 hide && "hidden"
             )}
         >
-            <div className="dark:bg-card bg-background rounded-md m-3 border border-border shadow-lg">
+            <div className="bg-[#1D1D1D] text-white rounded-md m-3 border border-border shadow-lg">
                 <div className="grid gap-2">
                     <div className="border-b border-border h-14 flex items-center justify-between p-4">
                         <h1 className="text-lg font-medium">We use cookies</h1>
@@ -71,9 +69,7 @@ export default function CookieConsent({
                             <br />
                             <span className="text-xs">
                                 {`By clicking "`}
-                                <span className="font-medium opacity-80">
-                                    Accept
-                                </span>
+                                <span className="font-medium">Accept</span>
                                 {`", you agree to our use of cookies.`}
                             </span>
                             <br />
@@ -82,7 +78,7 @@ export default function CookieConsent({
                             </a>
                         </p>
                     </div>
-                    <div className="flex gap-2 p-4 py-5 border-t border-border dark:bg-background/20">
+                    <div className="flex gap-2 p-4 py-5 border-t border-border">
                         <Button onClick={accept} className="w-full">
                             Accept
                         </Button>
@@ -107,31 +103,28 @@ export default function CookieConsent({
                 hide && "hidden"
             )}
         >
-            <div className="m-3 dark:bg-card bg-background border border-border rounded-lg">
+            <div className="m-3 bg-[#1D1D1D] text-white border border-border rounded-lg">
                 <div className="flex items-center justify-between p-3">
                     <h1 className="text-lg font-medium">We use cookies</h1>
                     <CookieIcon className="h-[1.2rem] w-[1.2rem]" />
                 </div>
                 <div className="p-3 -mt-2">
-                    <p className="text-sm text-left text-muted-foreground">
+                    <p className="text-sm text-left">
                         We use cookies to ensure you get the best experience on
                         our website. For more information on how we use cookies,
                         please see our cookie policy.
                     </p>
                 </div>
                 <div className="p-3 flex items-center gap-2 mt-2 border-t">
-                    <Button
-                        onClick={accept}
-                        className="w-full h-9 rounded-full"
-                    >
-                        accept
+                    <Button onClick={accept} className="w-full h-9 rounded-full">
+                        Accept
                     </Button>
                     <Button
                         onClick={decline}
                         className="w-full h-9 rounded-full"
                         variant="outline"
                     >
-                        decline
+                        Decline
                     </Button>
                 </div>
             </div>
