@@ -41,7 +41,7 @@ const CategoriesPage = () => {
 
   return (
     <div className="mr-2 mt-2 md:mt-6">
-      <div className="font-bold text-[22px] bg-blue-600 text-primary px-2 uppercase text-white flex items-center justify-between">
+      <div className="font-bold text-[22px] text-violet-800 px-2 uppercase flex items-center justify-between">
         <div className="md:hidden">
           <DropdownMenu>
             <DropdownMenuTrigger>

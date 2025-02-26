@@ -14,7 +14,7 @@ import { SignInButton, SignUpButton, SignedIn, SignedOut, UserButton } from "@cl
 import { MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useCart } from "@/apis/CartContext"; 
+import { useCart } from "@/contexts/CartContext"; 
 import { useState } from "react";
 import ShoppingCartModal from "@/components/products/cart/ShoppingCartModal";
 
@@ -40,13 +40,13 @@ const MobileMenu = ({ userInput = () => { } }: any) => {
                         <MenuIcon />
                     </SheetTrigger>
                     <SheetContent
-                        className="bg-[#0D0D0D] h-full text-[#F20707] w-72"
+                        className="bg-white h-full text-[#F2071B] w-72"
                         side="left"
                     >
                         <SheetHeader>
-                            <SheetTitle className="font-bold mt-3 flex justify-start relative -top-8 -left-15">
+                            <SheetTitle className="font-bold border-b border-white mt-3 flex justify-start relative -top-10 -left-15">
                                 <Link href='/'>
-                                    <Image src="/logo.png" width={100} height={80} alt="BNA Logo" className="rounded-[5px]" />
+                                    <Image src="/images/logo01.png" width={100} height={80} alt="Pawreedy Logo" className="rounded-[5px]" />
                                 </Link>
                             </SheetTitle>
                         </SheetHeader>
@@ -57,7 +57,7 @@ const MobileMenu = ({ userInput = () => { } }: any) => {
                                         href={item.href}
                                         aria-current={item.current ? 'page' : undefined}
                                         className={classNames(
-                                          item.current ? 'text-[#F20707]' : 'text-white  hover:text-[#F2071B]',
+                                          item.current ? 'text-[#F2071B]' : 'text-[#543791]  hover:text-[#F2071B]',
                                           'rounded-md px-3 py-2 text-sm font-medium',
                                         )}>
                                         {/* <item.icon className="md:hidden flex justify-start" /> */}
@@ -83,7 +83,7 @@ const MobileMenu = ({ userInput = () => { } }: any) => {
                             <div className="mt-6 flex items-start gap-6 absolute top-[300px]">
                                 {/* Cart Icon with Badge */}
                                 <button onClick={openCart} className="transition-transform">
-                                    <ShoppingCart size={24} className="text-white"/>
+                                    <ShoppingCart size={24} />
                                     {cart.length > 0 && (
                                         <span className="relative -top-[30px] -right-4 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                                             {cart.length}
@@ -92,12 +92,12 @@ const MobileMenu = ({ userInput = () => { } }: any) => {
                                 </button>
                                 {/* Wishlist Icon */}
                                 <Link href="/wishlist" className="hover:scale-105 transition-transform">
-                                    <Heart size={24} className="text-white"/>
+                                    <Heart size={24} />
                                 </Link>
                                 {/* User Dropdown */}
                                 <DropdownMenu>
                                     <DropdownMenuTrigger className="flex items-center gap-2">
-                                        <User size={24} className="cursor-pointer text-white" />
+                                        <User size={24} className="cursor-pointer" />
                                     </DropdownMenuTrigger>
                                     <DropdownMenuContent className="bg-white shadow-md rounded p-2">
                                         <SignedIn>

@@ -10,54 +10,18 @@ let database: any;
 const init = async () => {
   const connection = await connectToDB();
   dbConnection = connection;
-  database = await dbConnection?.db("pawreedy");
+  database = await dbConnection?.db("BNA");
 };
 
 // Seed Data
 const categories = [
   {
-    name: "Pet Food",
-    icon: "https://img.freepik.com/free-photo/pet-accessories-still-life-concept-with-food-bowl_23-2148949576.jpg?semt=ais_hybrid",
+    name: "Mokorotlo Mesh",
+    icon: "https://collect.wetransfer.com/board/saaaqq486z23kifky20250111085748/st8oaw59zxrnqdpb820250111085854",
   },
   {
-    name: "Toys",
-    icon: "https://img.freepik.com/free-photo/flat-lay-pile-colorful-weights_23-2148523275.jpg?semt=ais_hybrid",
-  },
-  {
-    name: "Grooming Supplies",
-    icon: "https://img.freepik.com/free-photo/close-up-dog-accessories_23-2150959988.jpg?semt=ais_hybrid",
-  },
-  {
-    name: "Beds and Furniture",
-    icon: "https://img.freepik.com/free-photo/outdoor-with-circle-chair_1339-5459.jpg?semt=ais_hybrid",
-  },
-  {
-    name: "Clothing and Accessories",
-    icon: "https://img.freepik.com/free-photo/set-dog-food-clothes_23-2147828992.jpg?semt=ais_hybrid",
-  },
-  {
-    name: "Health and Wellness",
-    icon: "https://img.freepik.com/free-photo/still-life-refillable-reusable-container_23-2150936061.jpg?semt=ais_hybrid",
-  },
-  {
-    name: "Training and Behavior",
-    icon: "https://img.freepik.com/free-photo/dog-stuff-composition_23-2147799888.jpg?semt=ais_hybrid",
-  },
-  {
-    name: "Travel and Outdoor Gear",
-    icon: "https://img.freepik.com/free-photo/adorable-dalmatian-dog-with-muzzle-outdoors_23-2149198350.jpg?semt=ais_hybrid",
-  },
-  {
-    name: "Feeding Supplies",
-    icon: "https://img.freepik.com/free-photo/top-view-pet-accessories_23-2150930416.jpg?semt=ais_hybrid",
-  },
-  {
-    name: "Cleaning and Waste Management",
-    icon: "https://img.freepik.com/free-photo/pet-accessories-still-life-concept-with-grooming-objects-food_23-2148949582.jpg?semt=ais_hybrid",
-  },
-  {
-    name: "Cages",
-    icon: "https://img.freepik.com/free-photo/beautiful-pet-portrait-small-dog-with-cage_23-2149218436.jpg?semt=ais_hybrid",
+    name: "Ubuntu Pulse",
+    icon: "https://collect.wetransfer.com/board/saaaqq486z23kifky20250111085748/sv10q9iajluf19lcp20250111085854",
   },
 ];
 

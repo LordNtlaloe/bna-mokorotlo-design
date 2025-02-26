@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ClerkProvider, ClerkLoaded, ClerkLoading } from '@clerk/nextjs'
 import Loading from "./loading";
-import { CartProvider } from "@/apis/CartContext";
-import { WishlistProvider } from "@/apis/WishlistContext";
+import { CartProvider } from "@/contexts/CartContext";
+import { WishlistProvider } from "@/contexts/WishlistContext";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Montserrat ({
+  subsets: ["latin"],
+  weight: "400"
+});
 
 export const metadata: Metadata = {
   title: "BNA Mokorotlo Design",
@@ -24,24 +27,19 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <WishlistProvider>
-      <CartProvider>
-      <html
-        lang="en"
-        className={cn("h-full scroll-smooth antialiased", inter.className)}
-      >
-        <body>
-          {/* Navbar */}
-          <ClerkLoading>
-            <Loading />
-          </ClerkLoading>
-          <ClerkLoaded>
-            <div>
-            </div>
-            <main className="grow">{children}</main>
-          </ClerkLoaded>
-        </body>
-      </html>
-      </CartProvider>
+        <CartProvider>
+          <html lang="en" className={cn("h-full scroll-smooth antialiased ", inter.className)}>
+            <body>
+              {/* Navbar */}
+              <ClerkLoading>
+                <Loading />
+              </ClerkLoading>
+              <ClerkLoaded>
+                <main className="grow">{children}</main>
+              </ClerkLoaded>
+            </body>
+          </html>
+        </CartProvider>
       </WishlistProvider>
     </ClerkProvider>
   );

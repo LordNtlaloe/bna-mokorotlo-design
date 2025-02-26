@@ -1,64 +1,101 @@
 import React from "react";
-import { FaFacebook, FaTwitter, FaPinterest, FaInstagram, FaYoutube, FaLinkedin } from 'react-icons/fa';
+import { FaMapPin, FaPhone, FaFacebook, FaTwitter, FaPinterest, FaInstagram, FaYoutube, FaLinkedin } from 'react-icons/fa';
+import Image from "next/image";
 
 const currentYear = new Date().getFullYear();
 
 const Footer = () => {
   return (
-    <footer className="w-full mt-20 pt-10 bg-[#0D0D0D] text-white">
+    <footer className="relative w-full bg-white">
       <div className="w-full px-8 mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <ul>
-            <p className="mb-1 text-base font-semibold text-[#F20707]">Product</p>
-            {["Overview", "Features", "Solutions", "Tutorials"].map((item) => (
-              <li key={item}>
-                <a href="#" className="block text-white py-1 hover:text-slate-50 focus:text-slate-50 text-sm">
-                  {item}
-                </a>
+      <Image src="/images/logo.png" height={160} width={80} alt="Pawreedy Logo" className="py-5"/>
+        <div className="grid justify-between grid-cols-1 gap-4 md:grid-cols-1">
+          <div className="grid justify-between grid-cols-4 gap-4">
+            <ul>
+              <p className="block mb-1 text-base font-semibold text-[#1D1D1D]">Product</p>
+              <li>
+                <a href="#" className="block text-[#1E1E1E] py-1 hover:text-[#1D1D1D] focus:text-[#1D1D1D] text-sm">Overview</a>
               </li>
-            ))}
-          </ul>
-          <ul>
-            <p className="mb-1 text-base font-semibold text-[#F20707]">Company</p>
-            {["About us", "Careers", "Press", "News"].map((item) => (
-              <li key={item}>
-                <a href="#" className="block text-white py-1 hover:text-slate-50 focus:text-slate-50 text-sm">
-                  {item}
-                </a>
+              <li>
+                <a href="#" className="block text-[#1E1E1E] py-1 hover:text-[#1D1D1D] focus:text-[#1D1D1D] text-sm">Features</a>
               </li>
-            ))}
-          </ul>
-          <ul>
-            <p className="mb-1 text-base font-semibold text-[#F20707]">Resource</p>
-            {["Blog", "Newsletter", "Events", "Help center"].map((item) => (
-              <li key={item}>
-                <a href="#" className="block text-white py-1 hover:text-slate-50 focus:text-slate-50 text-sm">
-                  {item}
-                </a>
+              <li>
+                <a href="#" className="block text-[#1E1E1E] py-1 hover:text-[#1D1D1D] focus:text-[#1D1D1D] text-sm">Solutions</a>
               </li>
-            ))}
-          </ul>
-          <ul>
-            <p className="mb-1 text-base font-semibold text-[#F20707]">Help Center</p>
-            {["Discord", "Twitter", "Github", "Contact Us"].map((item) => (
-              <li key={item}>
-                <a href="#" className="block text-white py-1 hover:text-slate-50 focus:text-slate-50 text-sm">
-                  {item}
-                </a>
+              <li>
+                <a href="#" className="block text-[#1E1E1E] py-1 hover:text-[#1D1D1D] focus:text-[#1D1D1D] text-sm">Tutorials</a>
               </li>
-            ))}
-          </ul>
+            </ul>
+            <ul>
+              <p className="block mb-1 text-base font-semibold text-[#1D1D1D]">Company</p>
+              <li>
+                <a href="#" className="block text-[#1E1E1E] py-1 hover:text-[#1D1D1D] focus:text-[#1D1D1D] text-sm">About us</a>
+              </li>
+              <li>
+                <a href="#" className="block text-[#1E1E1E] py-1 hover:text-[#1D1D1D] focus:text-[#1D1D1D] text-sm">Careers</a>
+              </li>
+              <li>
+                <a href="#" className="block text-[#1E1E1E] py-1 hover:text-[#1D1D1D] focus:text-[#1D1D1D] text-sm">Press</a>
+              </li>
+              <li>
+                <a href="#" className="block text-[#1E1E1E] py-1 hover:text-[#1D1D1D] focus:text-[#1D1D1D] text-sm">News</a>
+              </li>
+            </ul>
+            <ul>
+              <p className="block mb-1 text-base font-semibold text-[#1D1D1D]">Resource</p>
+              <li>
+                <a href="#" className="block text-[#1E1E1E] py-1 hover:text-[#1D1D1D] focus:text-[#1D1D1D] text-sm">Blog</a>
+              </li>
+              <li>
+                <a href="#" className="block text-[#1E1E1E] py-1 hover:text-[#1D1D1D] focus:text-[#1D1D1D] text-sm">Newsletter</a>
+              </li>
+              <li>
+                <a href="#" className="block text-[#1E1E1E] py-1 hover:text-[#1D1D1D] focus:text-[#1D1D1D] text-sm">Events</a>
+              </li>
+              <li>
+                <a href="#" className="block text-[#1E1E1E] py-1 hover:text-[#1D1D1D] focus:text-[#1D1D1D] text-sm">Help center</a>
+              </li>
+            </ul>
+            <ul>
+              <p className="block mb-1 text-base font-semibold text-[#1D1D1D]">Help Center</p>
+              <li>
+                <a href="#" className="block text-[#1E1E1E] py-1 hover:text-[#1D1D1D] focus:text-[#1D1D1D] text-sm">Discord</a>
+              </li>
+              <li>
+                <a href="#" className="block text-[#1E1E1E] py-1 hover:text-[#1D1D1D] focus:text-[#1D1D1D] text-sm">Twitter</a>
+              </li>
+              <li>
+                <a href="#" className="block text-[#1E1E1E] py-1 hover:text-[#1D1D1D] focus:text-[#1D1D1D] text-sm">Github</a>
+              </li>
+              <li>
+                <a href="#" className="block text-[#1E1E1E] py-1 hover:text-[#1D1D1D] focus:text-[#1D1D1D] text-sm">Contact Us</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div className="flex flex-col items-center justify-between w-full py-6 mt-12 border-t border-slate-200 md:flex-row">
-          <p className="mb-4 text-sm text-center text-slate-50 md:mb-0">
-            Copyright © {currentYear} <a href="https://material-tailwind.com/" className="hover:underline">Material Tailwind</a>. All Rights Reserved.
+        <div className="flex flex-col items-center justify-center w-full py-4 mt-12 border-t border-slate-200 md:flex-row md:justify-between">
+          <p className="block mb-4 text-sm text-center text-[#1D1D1D] md:mb-0">
+            Copyright © {currentYear} <a href="pawreedy.com">BNA Mokorotlo Design</a>. All Rights Reserved.
           </p>
-          <div className="flex gap-4">
-            {[FaFacebook, FaTwitter, FaPinterest, FaInstagram, FaYoutube, FaLinkedin].map((Icon, index) => (
-              <a key={index} href="#" className="transition-opacity text-inherit hover:opacity-80">
-                <Icon className="w-5 h-5" />
-              </a>
-            ))}
+          <div className="flex gap-4 text-[#1E1E1E] sm:justify-center">
+            <a href="#" className="block transition-opacity text-inherit hover:opacity-80">
+              <FaFacebook className="w-5 h-5" />
+            </a>
+            <a href="#" className="block transition-opacity text-inherit hover:opacity-80">
+              <FaTwitter className="w-5 h-5" />
+            </a>
+            <a href="#" className="block transition-opacity text-inherit hover:opacity-80">
+              <FaPinterest className="w-5 h-5" />
+            </a>
+            <a href="#" className="block transition-opacity text-inherit hover:opacity-80">
+              <FaInstagram className="w-5 h-5" />
+            </a>
+            <a href="#" className="block transition-opacity text-inherit hover:opacity-80">
+              <FaYoutube className="w-5 h-5" />
+            </a>
+            <a href="#" className="block transition-opacity text-inherit hover:opacity-80">
+              <FaLinkedin className="w-5 h-5" />
+            </a>
           </div>
         </div>
       </div>

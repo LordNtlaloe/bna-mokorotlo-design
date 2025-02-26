@@ -2,17 +2,17 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { useWishlist } from '@/apis/WishlistContext';
+import { useWishlist } from '@/contexts/WishlistContext';
 import { FaTrashAlt } from 'react-icons/fa'; // Import the delete icon from react-icons
 
 export default function Wishlist() {
     const { wishlist, removeFromWishlist } = useWishlist();
 
     return (
-        <div className="w-[100%] lg:grid grid-cols-1 items-start gap-6 pt-4 pb-16">
+        <div className="w-[100%] lg:grid grid-cols-1 items-start gap-6 py-20">
             <div className="col-span-9 mt-6 lg:mt-0">
                 {wishlist.length === 0 ? (
-                    <p className="text-center text-gray-600">Your wishlist is empty.</p>
+                    <p className="text-center text-white">Your wishlist is empty.</p>
                 ) : (
                     <div className="space-y-4 w-[100%]">
                         {wishlist.map((item: any) => (

@@ -1,50 +1,49 @@
 import Image from 'next/image';
 import React from 'react';
-
 const CTA = () => {
   return (
-    <section className="py-10 sm:py-5 bg-slate-50  mx-16 rounded-lg" aria-label="service">
+    <section className="py-10" aria-label="service">
       <div className="container mx-auto px-4">
 
         <Image
-          src="/logo.png"
-          width={180}
-          height={180}
+          src="/images/hero-1.png"
+          width={122}
+          height={136}
           loading="lazy"
           alt=""
-          className="mx-auto my-auto"
+          className="mx-auto mb-8"
         />
 
-        <h2 className="text-center text-4xl mb-14 text-[#0D0D0D] font-bold">
-          <span className="text-[#F20707]">Rise Above,</span> Fear.
+        <h2 className="text-center text-4xl text-slate-100 mb-14 font-bold">
+          <span className="text-[]">How to get your shoes,</span> when you need them.
         </h2>
 
         <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {[
             {
-              icon: '/delivery-truck.svg',
+              icon: '/images/delivery-truck.svg',
               title: 'Free Same-Day Delivery',
               text: 'Order by 2pm local time to get free delivery on orders R35+ today.'
             },
             {
-              icon: '/package-return.svg',
+              icon: '/images/package-return.svg',
               title: '30 Day Return',
               text: '35% off your first order plus 5% off all future orders.'
             },
             {
-              icon: '/secure-payment.svg',
+              icon: '/images/secure-payment.svg',
               title: 'Security payment',
               text: '25% off your online order of R50+. Available at most locations.'
             },
             {
-              icon: '/support.svg',
+              icon: '/images/support.svg',
               title: '24/7 Support',
               text: 'Shop online to get orders over R35 shipped fast and free.'
             }
           ].map((service, index) => (
             <li key={index}>
-              <div className="text-center p-4 shadow-sm shadow-[#F20707] rounded-lg bg-white flex flex-col items-center justify-between h-64 w-full">
-                <figure className="mx-auto mb-4">
+              <div className="text-center p-4 shadow-lg rounded-lg h-60">
+                <figure className="mx-auto mb-4 flex items-center justify-center">
                   <Image
                     src={service.icon}
                     width={70}
@@ -53,8 +52,8 @@ const CTA = () => {
                     alt="service icon"
                   />
                 </figure>
-                <h3 className="text-xl font-bold text-[#F20707] mb-2">{service.title}</h3>
-                <p className="text-slate-700">{service.text}</p>
+                <h3 className="text-xl text-[#F20707] font-bold mb-2">{service.title}</h3>
+                <p className="text-slate-100">{service.text}</p>
               </div>
             </li>
           ))}

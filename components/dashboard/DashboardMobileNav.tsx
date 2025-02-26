@@ -1,6 +1,6 @@
 import { MenuIcon, Settings2Icon, User2Icon } from 'lucide-react'
 import React from 'react'
-import SaveButton from '../general/SaveButton'
+import Image from 'next/image'
 
 import {
     DropdownMenu,
@@ -21,17 +21,19 @@ const DashboardMobileNav = () => {
                 <DropdownMenuTrigger>
                     <MenuIcon />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className='bg-white ml-6 text-violet-800 md: mt-2'>
-                    <DropdownMenuLabel className='pb-2'>Dashboard</DropdownMenuLabel>
-                    <DropdownMenuSeparator />
-                    <div>
+                <DropdownMenuContent className='bg-violet-900 ml-6 text-white md: mt-2 pb-6'>
+                    <DropdownMenuLabel className=' pb-2'>
+                        <Image src="/logo01.png" width={120} height={60} alt="Pawreedy Logo" className="" />
+                    </DropdownMenuLabel>
+                    {/* <DropdownMenuSeparator /> */}
+                    <div className=''>
                         {dashboardMenu.map((item) => (
                             <Link
                                 href={item.href}
                                 key={item.id}
-                                className="items-center md:pl-6 py-3 pl-3 "
+                                className="items-center md:pl-6 py-2 pl-3 p"
                             >
-                                <DropdownMenuItem className="flex pl-3 gap-3 w-72 hover:bg-violet-600 hover:text-white mx-2 py-2 rounded-[5px] transition-all duration-500">
+                                <DropdownMenuItem className="flex pl-3 gap-3 w-72 hover:bg-slate-600 mx-2 py-2 rounded-[5px] transition-all duration-500">
                                     <item.icon className={`shrink-0  text-${item.color}`} />
                                     <span>{item.label}</span>
                                 </DropdownMenuItem>
@@ -41,6 +43,7 @@ const DashboardMobileNav = () => {
                     </div>
                 </DropdownMenuContent>
             </DropdownMenu>
+
         </main>
     )
 }

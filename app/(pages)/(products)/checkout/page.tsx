@@ -1,6 +1,6 @@
 'use client';
 
-import { useCart } from '@/apis/CartContext';
+import { useCart } from '@/contexts/CartContext';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -186,19 +186,19 @@ const CheckoutPage = () => {
   };
 
   return (
-    <div className="py-6 px-4 sm:p-6 md:py-10 md:px-8">
+    <div className="bg-gradient-to-b from-black to-[#0D0D0D]  py-6 px-4 sm:p-6 md:py-10 md:px-8">
       <div className="max-lg:max-w-xl mx-auto w-full">
         <div className="grid lg:grid-cols-3 gap-6">
           {/* Main Checkout Section */}
-          <div className="bg-zinc-50 rounded-lg lg:col-span-2 max-lg:order-1 p-6 max-w-4xl mx-auto w-full">
+          <div className="lg:col-span-2 max-lg:order-1 p-6 !pr-0 max-w-4xl mx-auto w-full">
             <div className="text-center max-lg:hidden">
-              <h2 className="text-3xl font-extrabold text-[#F20707] inline-block border-gray-800 pb-1">Checkout</h2>
+              <h2 className="text-3xl font-extrabold text-gray-800 inline-block border-b-2 border-gray-800 pb-1">Checkout</h2>
             </div>
 
             <form className="lg:mt-16">
               {/* Shipping Information */}
               <div>
-                <h2 className="text-xl font-bold text-[#F20707]">Shipping Info</h2>
+                <h2 className="text-xl font-bold text-gray-800">Shipping Info</h2>
 
                 <div className="grid sm:grid-cols-2 gap-8 mt-8">
                   <div>
@@ -208,7 +208,7 @@ const CheckoutPage = () => {
                       placeholder="Name"
                       value={shippingAddress.name}
                       onChange={handleInputChange}
-                      className="px-2 py-3 bg-white text-gray-800 rounded-md w-full text-sm border border-slate-200 focus:border-blue-600 outline-none"
+                      className="px-2 pb-2 bg-white text-gray-800 w-full text-sm border-b focus:border-blue-600 outline-none"
                     />
                   </div>
                   <div>
@@ -218,7 +218,7 @@ const CheckoutPage = () => {
                       placeholder="Email"
                       value={shippingAddress.email}
                       onChange={handleInputChange}
-                      className="px-2 py-3 bg-white text-gray-800 rounded-md w-full text-sm border border-slate-200 focus:border-blue-600 outline-none"
+                      className="px-2 pb-2 bg-white text-gray-800 w-full text-sm border-b focus:border-blue-600 outline-none"
                     />
                   </div>
                   <div>
@@ -228,7 +228,7 @@ const CheckoutPage = () => {
                       placeholder="Address"
                       value={shippingAddress.address}
                       onChange={handleInputChange}
-                      className="px-2 py-3 bg-white text-gray-800 rounded-md w-full text-sm border border-slate-200 focus:border-blue-600 outline-none"
+                      className="px-2 pb-2 bg-white text-gray-800 w-full text-sm border-b focus:border-blue-600 outline-none"
                     />
                   </div>
                   <div>
@@ -238,7 +238,7 @@ const CheckoutPage = () => {
                       placeholder="City"
                       value={shippingAddress.city}
                       onChange={handleInputChange}
-                      className="px-2 py-3 bg-white text-gray-800 rounded-md w-full text-sm border border-slate-200 focus:border-blue-600 outline-none"
+                      className="px-2 pb-2 bg-white text-gray-800 w-full text-sm border-b focus:border-blue-600 outline-none"
                     />
                   </div>
                   <div>
@@ -248,7 +248,7 @@ const CheckoutPage = () => {
                       placeholder="Country"
                       value={shippingAddress.country}
                       onChange={handleInputChange}
-                      className="px-2 py-3 bg-white text-gray-800 rounded-md w-full text-sm border border-slate-200 focus:border-blue-600 outline-none"
+                      className="px-2 pb-2 bg-white text-gray-800 w-full text-sm border-b focus:border-blue-600 outline-none"
                     />
                   </div>
                   <div>
@@ -258,7 +258,7 @@ const CheckoutPage = () => {
                       placeholder="Postal Code"
                       value={shippingAddress.postalCode}
                       onChange={handleInputChange}
-                      className="px-2 py-3 bg-white text-gray-800 rounded-md w-full text-sm border border-slate-200 focus:border-blue-600 outline-none"
+                      className="px-2 pb-2 bg-white text-gray-800 w-full text-sm border-b focus:border-blue-600 outline-none"
                     />
                   </div>
                 </div>
@@ -266,7 +266,7 @@ const CheckoutPage = () => {
 
               {/* Payment Method */}
               <div className="mt-16">
-                <h2 className="text-xl font-bold text-[#F20707]">Payment method</h2>
+                <h2 className="text-xl font-bold text-gray-800">Payment method</h2>
                 <div className="grid gap-4 sm:grid-cols-2 mt-4">
                   <div className="flex items-center">
                     <input type="radio" className="w-5 h-5 cursor-pointer" id="card" defaultChecked />
@@ -292,7 +292,7 @@ const CheckoutPage = () => {
                       placeholder="Cardholder's Name"
                       value={cardDetails.cardName}
                       onChange={handleCardInputChange}
-                      className="px-2 py-3 bg-white text-gray-800 rounded-md w-full text-sm border border-slate-200 focus:border-blue-600 outline-none"
+                      className="px-2 pb-2 bg-white text-gray-800 w-full text-sm border-b focus:border-blue-600 outline-none"
                     />
                   </div>
                   <div className="flex bg-white border-b focus-within:border-blue-600 overflow-hidden">
@@ -302,7 +302,7 @@ const CheckoutPage = () => {
                       placeholder="Card Number"
                       value={cardDetails.cardNumber}
                       onChange={handleCardInputChange}
-                      className="px-2 py-3 bg-white text-gray-800 rounded-md w-full text-sm border border-slate-200 focus:border-blue-600 outline-none"
+                      className="px-2 pb-2 bg-white text-gray-800 w-full text-sm outline-none"
                     />
                   </div>
                   <div className="grid grid-cols-2 gap-6">
@@ -313,8 +313,8 @@ const CheckoutPage = () => {
                         placeholder="EXP. MM/YY"
                         value={cardDetails.expDate}
                         onChange={handleCardInputChange}
-                        className="px-2 py-3 bg-white text-gray-800 rounded-md w-full text-sm border border-slate-200 focus:border-blue-600 outline-none"
-                        />
+                        className="px-2 pb-2 bg-white text-gray-800 w-full text-sm border-b focus:border-blue-600 outline-none"
+                      />
                     </div>
                     <div>
                       <input
@@ -323,8 +323,8 @@ const CheckoutPage = () => {
                         placeholder="CVV"
                         value={cardDetails.cvv}
                         onChange={handleCardInputChange}
-                        className="px-2 py-3 bg-white text-gray-800 rounded-md w-full text-sm border border-slate-200 focus:border-blue-600 outline-none"
-                        />
+                        className="px-2 pb-2 bg-white text-gray-800 w-full text-sm border-b focus:border-blue-600 outline-none"
+                      />
                     </div>
                   </div>
                 </div>
@@ -334,12 +334,12 @@ const CheckoutPage = () => {
 
           {/* Order Summary */}
           <div className="lg:col-span-1 max-lg:order-2">
-            <div className="bg-zinc-50 p-8 rounded-lg">
-              <h2 className="text-2xl font-bold mb-4 text-[#F20707]">Order Summary</h2>
+            <div className="bg-gray-100 p-8 rounded-lg">
+              <h2 className="text-2xl font-bold mb-4">Order Summary</h2>
               <ul>
                 {cart.map((item, index) => (
                   <li key={index} className="flex justify-between items-center mb-4">
-                    <Image src={item.image} width={100} height={100} alt={item.name} className='rounded-md'/>
+                    <Image src={item.image} width={100} height={100} alt={item.name} />
                     <span>{item.name} * {item.quantity}</span>
                     <span>M{item.price}</span>
                   </li>
@@ -348,12 +348,12 @@ const CheckoutPage = () => {
               <div className="border-t pt-4">
                 <div className="flex justify-between font-bold text-lg">
                   <span>Total</span>
-                  <span>M{cart.reduce((total, item) => total +   item.price * item.quantity, 0)}</span>
+                  <span>M{cart.reduce((total, item) => total + item.price * item.quantity, 0)}</span>
                 </div>
               </div>
               <button
                 onClick={handleCheckout}
-                className="mt-6 w-full py-3 bg-[#F20707] text-white font-bold rounded-lg hover:bg-[#F2071B] transition-colors"
+                className="mt-6 w-full py-3 bg-violet-800 text-white font-bold rounded-lg hover:bg-violet-600 transition-colors"
               >
                 Complete Checkout
               </button>

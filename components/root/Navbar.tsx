@@ -1,15 +1,14 @@
 import Image from "next/image";
 import Menu from "./Menu";
-import logo from '/public/logo.png';
 import Link from "next/link";
 import MobileMenu from "./MobileMenu";
 
 const Navbar = () => {
   return (
-    <main className="w-full bg-white h-24 text-[#0D0D0D] justify-between flex items-center px-4 sticky top-0 left-0 right-0 z-10">
+    <main className="w-full bg-[#0D0D0D]  h-24 text-white justify-between flex items-center px-4 sticky top-0 left-0 right-0 z-10">
       {/* Logo */}
-      <Link href='/' className="flex-shrink-0 md:">
-        <Image src={logo} width={100} height={100} alt="BNA Logo"/>
+      <Link href='/' className="flex-shrink-0 py-10">
+        <Image src="/images/logo.png" width={120} height={60} alt="Pawreedy Logo"/>
       </Link>
 
       {/* Menu */}

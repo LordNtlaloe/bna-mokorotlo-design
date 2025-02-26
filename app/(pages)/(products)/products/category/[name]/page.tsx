@@ -21,13 +21,15 @@ import CategoriesSidebar from "@/components/category/CategoriesSideBar";
 const CategoriesPage = () => {
   const params = useParams();
   const [productList, setProductList] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true); // Add a loading state
 
   useEffect(() => {
     const fetchProducts = async () => {
-      setLoading(true);
+      setLoading(true); // Set loading to true before fetching
       let productsByCategory = [];
       const category = Array.isArray(params?.name) ? params?.name[0] : params?.name;
+
+      console.log("Fetching products for category:", category); // Log the category
 
       if (category === "all") {
         productsByCategory = await getAllProducts();
@@ -35,8 +37,10 @@ const CategoriesPage = () => {
         productsByCategory = await getAllProductsByCategory(category);
       }
 
-      setProductList(productsByCategory);
-      setLoading(false);
+      console.log("Fetched products:", productsByCategory); // Log the fetched products
+
+      setProductList(productsByCategory || []);
+      setLoading(false); // Set loading to false after fetching
     };
 
     if (params?.name) {
@@ -46,7 +50,7 @@ const CategoriesPage = () => {
 
   // Decode the category name for better presentation
   const categoryName = params?.name
-    ? decodeURIComponent(Array.isArray(params?.name) ? params?.name[0] : params?.name).replace(/%20/g, ' ')
+    ? decodeURIComponent(Array.isArray(params?.name) ? params?.name[0] : params?.name)
     : "";
 
   return (
@@ -66,11 +70,13 @@ const CategoriesPage = () => {
       </div>
       <h1 className="text-2xl font-bold text-gray-800 mb-4">{categoryName}</h1>
       {loading ? (
-        <p>Loading products...</p>
+        <p className="text-center text-gray-500">Loading...</p>
       ) : productList.length > 0 ? (
         <ProductList productList={productList} title={`${categoryName} Products`} />
       ) : (
-        <p className="text-gray-500">No products available in the {categoryName} category.</p>
+        <p className="text-center text-gray-500">
+          No products found in this category.
+        </p>
       )}
     </div>
   );

@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function page() {
   return (
-    <div>
+    <div className='bg-gradient-to-b from-black to-[#1C1C1C] '>
         <Wishlist />
     </div>
   )

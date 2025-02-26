@@ -10,7 +10,7 @@ let database: any
 const init = async () => {
   const connection = await connectToDB();
   dbConnection = connection;
-  database = await dbConnection?.db("pawreedy");
+  database = await dbConnection?.db("BNA");
 };
 
 export const getAllSizes = async () => {
@@ -127,11 +127,11 @@ export const saveNewSize = async (formData: FormData) => {
 
 const seedSizes = async () => {
   const initialSizes = [
-    { name: "XL",},
-    { name: "L",},
-    { name: "M",},
-    { name: "Sm",},
-    { name: "Xs"},
+    { name: "4",},
+    { name: "5",},
+    { name: "6",},
+    { name: "7",},
+    { name: "9"},
   ];
 
   if (!dbConnection) await init();
