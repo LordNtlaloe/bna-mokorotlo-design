@@ -21,9 +21,9 @@ const DashboardMobileNav = () => {
                 <DropdownMenuTrigger>
                     <MenuIcon />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className='bg-violet-900 ml-6 text-white md: mt-2 pb-6'>
+                <DropdownMenuContent className='bg-[#1D1D1D] ml-6 text-white md: mt-2 pb-6'>
                     <DropdownMenuLabel className=' pb-2'>
-                        <Image src="/logo01.png" width={120} height={60} alt="Pawreedy Logo" className="" />
+                        <Image src="/logo.png" width={120} height={60} alt="Pawreedy Logo" className="" />
                     </DropdownMenuLabel>
                     {/* <DropdownMenuSeparator /> */}
                     <div className=''>
@@ -33,7 +33,7 @@ const DashboardMobileNav = () => {
                                 key={item.id}
                                 className="items-center md:pl-6 py-2 pl-3 p"
                             >
-                                <DropdownMenuItem className="flex pl-3 gap-3 w-72 hover:bg-slate-600 mx-2 py-2 rounded-[5px] transition-all duration-500">
+                                <DropdownMenuItem className="flex pl-3 gap-3 w-72 hover:bg-[#2D2D2D] mx-2 py-2 rounded-[5px] transition-all duration-500">
                                     <item.icon className={`shrink-0  text-${item.color}`} />
                                     <span>{item.label}</span>
                                 </DropdownMenuItem>

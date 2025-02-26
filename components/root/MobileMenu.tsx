@@ -40,13 +40,13 @@ const MobileMenu = ({ userInput = () => { } }: any) => {
                         <MenuIcon />
                     </SheetTrigger>
                     <SheetContent
-                        className="bg-white h-full text-[#F2071B] w-72"
+                        className="bg-[#1D1D1D] h-full text-white w-72"
                         side="left"
                     >
                         <SheetHeader>
-                            <SheetTitle className="font-bold border-b border-white mt-3 flex justify-start relative -top-10 -left-15">
+                            <SheetTitle className="font-bold border-b border-[#3D3D3D] my-4 flex justify-start relative -top-10 -left-15">
                                 <Link href='/'>
-                                    <Image src="/images/logo01.png" width={100} height={80} alt="Pawreedy Logo" className="rounded-[5px]" />
+                                    <Image src="/images/logo.png" width={80} height={80} alt="BNA Logo" className="rounded-[5px]" />
                                 </Link>
                             </SheetTitle>
                         </SheetHeader>
@@ -57,7 +57,7 @@ const MobileMenu = ({ userInput = () => { } }: any) => {
                                         href={item.href}
                                         aria-current={item.current ? 'page' : undefined}
                                         className={classNames(
-                                          item.current ? 'text-[#F2071B]' : 'text-[#543791]  hover:text-[#F2071B]',
+                                          item.current ? 'text-[#F2071B]' : 'text-white  hover:text-[#F2071B]',
                                           'rounded-md px-3 py-2 text-sm font-medium',
                                         )}>
                                         {/* <item.icon className="md:hidden flex justify-start" /> */}
